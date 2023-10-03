@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 
 import '/index.dart';
 import '/main.dart';
@@ -64,10 +65,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : WelcomeWidget(),
         ),
         FFRoute(
-          name: 'home',
-          path: '/home',
-          builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'home') : HomeWidget(),
+          name: 'RutinaGanarPeso',
+          path: '/rutinaGanarPeso',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'RutinaGanarPeso')
+              : RutinaGanarPesoWidget(),
         ),
         FFRoute(
           name: 'welcome',
@@ -129,8 +131,198 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'completar_info',
           path: '/completarInfo',
           builder: (context, params) => CompletarInfoWidget(),
+        ),
+        FFRoute(
+          name: 'RutinaPerderPeso',
+          path: '/RutinaPerderPeso',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'RutinaPerderPeso')
+              : RutinaPerderPesoWidget(),
+        ),
+        FFRoute(
+          name: 'RutinaGanarMasa',
+          path: '/rutinaGanarMasa',
+          builder: (context, params) => RutinaGanarMasaWidget(),
+        ),
+        FFRoute(
+          name: 'Rutina',
+          path: '/Rutinageneral',
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'Rutina')
+              : RutinaWidget(),
+        ),
+        FFRoute(
+          name: 'EntrenamientoAganarmusculo',
+          path: '/EntrenamientoAMasa',
+          builder: (context, params) => EntrenamientoAganarmusculoWidget(),
+        ),
+        FFRoute(
+          name: 'EntrenamientoBganarmusculo',
+          path: '/EntrenamientoBMasa',
+          builder: (context, params) => EntrenamientoBganarmusculoWidget(),
+        ),
+        FFRoute(
+          name: 'EntrenamientoCganarmusculo',
+          path: '/EntrenamientoCMasa',
+          builder: (context, params) => EntrenamientoCganarmusculoWidget(),
+        ),
+        FFRoute(
+          name: 'EntrenamientoDganarmusculo',
+          path: '/EntrenamientoDMasa',
+          builder: (context, params) => EntrenamientoDganarmusculoWidget(),
+        ),
+        FFRoute(
+          name: 'Extenciondepiernas',
+          path: '/Extenciondepiernas',
+          builder: (context, params) => ExtenciondepiernasWidget(),
+        ),
+        FFRoute(
+          name: 'Sentadillaconbarra',
+          path: '/SentadillaConBarra',
+          builder: (context, params) => SentadillaconbarraWidget(),
+        ),
+        FFRoute(
+          name: 'PesasRusas',
+          path: '/Pesasrusas',
+          builder: (context, params) => PesasRusasWidget(),
+        ),
+        FFRoute(
+          name: 'Pantorrilla',
+          path: '/pantorrilla',
+          builder: (context, params) => PantorrillaWidget(),
+        ),
+        FFRoute(
+          name: 'Isquisibio',
+          path: '/isquisibio',
+          builder: (context, params) => IsquisibioWidget(),
+        ),
+        FFRoute(
+          name: 'Buenosdias',
+          path: '/BuenosDias',
+          builder: (context, params) => BuenosdiasWidget(),
+        ),
+        FFRoute(
+          name: 'HIT',
+          path: '/HIT',
+          builder: (context, params) => HitWidget(),
+        ),
+        FFRoute(
+          name: 'sentadilla',
+          path: '/sentadilla',
+          builder: (context, params) => SentadillaWidget(),
+        ),
+        FFRoute(
+          name: 'empuje',
+          path: '/empuje',
+          builder: (context, params) => EmpujeWidget(),
+        ),
+        FFRoute(
+          name: 'pmuerto',
+          path: '/pmuerto',
+          builder: (context, params) => PmuertoWidget(),
+        ),
+        FFRoute(
+          name: 'pmuerto2',
+          path: '/pmuerto2',
+          builder: (context, params) => Pmuerto2Widget(),
+        ),
+        FFRoute(
+          name: 'cable',
+          path: '/cable',
+          builder: (context, params) => CableWidget(),
+        ),
+        FFRoute(
+          name: 'bulgara',
+          path: '/bulgara',
+          builder: (context, params) => BulgaraWidget(),
+        ),
+        FFRoute(
+          name: 'HIT2',
+          path: '/HIT2',
+          builder: (context, params) => Hit2Widget(),
+        ),
+        FFRoute(
+          name: 'giro',
+          path: '/GIRO',
+          builder: (context, params) => GiroWidget(),
+        ),
+        FFRoute(
+          name: 'BarbellRollOuts',
+          path: '/BarbellRollOuts',
+          builder: (context, params) => BarbellRollOutsWidget(),
+        ),
+        FFRoute(
+          name: 'press',
+          path: '/press',
+          builder: (context, params) => PressWidget(),
+        ),
+        FFRoute(
+          name: 'cable1',
+          path: '/cable1',
+          builder: (context, params) => Cable1Widget(),
+        ),
+        FFRoute(
+          name: 'remo',
+          path: '/remo',
+          builder: (context, params) => RemoWidget(),
+        ),
+        FFRoute(
+          name: 'fly',
+          path: '/fly',
+          builder: (context, params) => FlyWidget(),
+        ),
+        FFRoute(
+          name: 'despegable',
+          path: '/despegable',
+          builder: (context, params) => DespegableWidget(),
+        ),
+        FFRoute(
+          name: 'HIT3',
+          path: '/HIT3',
+          builder: (context, params) => Hit3Widget(),
+        ),
+        FFRoute(
+          name: 'pressh',
+          path: '/pressh',
+          builder: (context, params) => PresshWidget(),
+        ),
+        FFRoute(
+          name: 'elevacion',
+          path: '/elevacion',
+          builder: (context, params) => ElevacionWidget(),
+        ),
+        FFRoute(
+          name: 'enco',
+          path: '/enco',
+          builder: (context, params) => EncoWidget(),
+        ),
+        FFRoute(
+          name: 'curl',
+          path: '/curl',
+          builder: (context, params) => CurlWidget(),
+        ),
+        FFRoute(
+          name: 'cable3',
+          path: '/cable3',
+          builder: (context, params) => Cable3Widget(),
+        ),
+        FFRoute(
+          name: 'pressbanca',
+          path: '/pressbanca',
+          builder: (context, params) => PressbancaWidget(),
+        ),
+        FFRoute(
+          name: 'inmersiones',
+          path: '/inmersiones',
+          builder: (context, params) => InmersionesWidget(),
+        ),
+        FFRoute(
+          name: 'HIT4',
+          path: '/HIT4',
+          builder: (context, params) => Hit4Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
@@ -285,4 +477,24 @@ class TransitionInfo {
   final Alignment? alignment;
 
   static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+}
+
+class RootPageContext {
+  const RootPageContext(this.isRootPage, [this.errorRoute]);
+  final bool isRootPage;
+  final String? errorRoute;
+
+  static bool isInactiveRootPage(BuildContext context) {
+    final rootPageContext = context.read<RootPageContext?>();
+    final isRootPage = rootPageContext?.isRootPage ?? false;
+    final location = GoRouter.of(context).location;
+    return isRootPage &&
+        location != '/' &&
+        location != rootPageContext?.errorRoute;
+  }
+
+  static Widget wrap(Widget child, {String? errorRoute}) => Provider.value(
+        value: RootPageContext(true, errorRoute),
+        child: child,
+      );
 }

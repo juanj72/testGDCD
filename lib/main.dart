@@ -47,6 +47,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
 
@@ -96,7 +97,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'home';
+  String _currentPageName = 'progressTracker';
   late Widget? _currentPage;
 
   @override
@@ -109,10 +110,12 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'home': HomeWidget(),
       'progressTracker': ProgressTrackerWidget(),
       'profile': ProfileWidget(),
       'homeCopy': HomeCopyWidget(),
+      'Rutina': RutinaWidget(),
+      'RutinaGanarPeso': RutinaGanarPesoWidget(),
+      'RutinaPerderPeso': RutinaPerderPesoWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -131,18 +134,6 @@ class _NavBarPageState extends State<NavBarPage> {
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.dumbbell,
-              size: 24.0,
-            ),
-            activeIcon: FaIcon(
-              FontAwesomeIcons.dumbbell,
-              size: 32.0,
-            ),
-            label: 'Rutina',
-            tooltip: '',
-          ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.camera_alt_outlined,
@@ -170,13 +161,49 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
-              size: 24.0,
+              size: 28.0,
             ),
             activeIcon: Icon(
               Icons.home_rounded,
-              size: 32.0,
+              size: 34.0,
             ),
             label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.dumbbell,
+              size: 24.0,
+            ),
+            activeIcon: FaIcon(
+              FontAwesomeIcons.dumbbell,
+              size: 32.0,
+            ),
+            label: 'Rutina',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.dumbbell,
+              size: 0.0,
+            ),
+            activeIcon: FaIcon(
+              FontAwesomeIcons.dumbbell,
+              size: 0.0,
+            ),
+            label: 'Rutina',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.dumbbell,
+              size: 0.0,
+            ),
+            activeIcon: FaIcon(
+              FontAwesomeIcons.dumbbell,
+              size: 0.0,
+            ),
+            label: 'Rutina',
             tooltip: '',
           )
         ],

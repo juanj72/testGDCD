@@ -1,4 +1,3 @@
-import '/components/action_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -74,7 +73,9 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -120,7 +121,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                               ),
                               Expanded(
                                 child: Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.00, 0.00),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 10.0, 0.0),
@@ -152,7 +153,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 4.0),
                                                     child: Text(
-                                                      'Reminder!',
+                                                      'Recordatorio!',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -242,7 +243,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                             children: [
                               Expanded(
                                 child: Align(
-                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.00, 0.00),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment:
@@ -265,7 +266,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                                               clipBehavior: Clip.none,
                                               children: [
                                                 Text(
-                                                  'Track your monthly progress with Photo',
+                                                  'Sigue tu proceso con registros fotográficos',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelMedium
@@ -286,7 +287,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                                           onPressed: () {
                                             print('Button pressed ...');
                                           },
-                                          text: 'Learn more',
+                                          text: 'Leer más',
                                           options: FFButtonOptions(
                                             width: 130.0,
                                             height: 40.0,
@@ -329,18 +330,6 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                      child: wrapWithModel(
-                        model: _model.actionModel,
-                        updateCallback: () => setState(() {}),
-                        child: ActionWidget(
-                          label: 'Compare my Photo',
-                          button: 'Compare',
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
                           EdgeInsetsDirectional.fromSTEB(20.0, 30.0, 20.0, 0.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -353,7 +342,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Gallery',
+                                  'Galería',
                                   style: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
@@ -362,7 +351,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                                       ),
                                 ),
                                 Text(
-                                  'see more',
+                                  'Ver más',
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -381,7 +370,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    '2 June',
+                                    '*fecha',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -473,7 +462,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      '2 June',
+                                      '*fecha',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -567,7 +556,7 @@ class _ProgressTrackerWidgetState extends State<ProgressTrackerWidget>
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(0.9, 0.9),
+                alignment: AlignmentDirectional(0.90, 0.90),
                 child: Material(
                   color: Colors.transparent,
                   elevation: 4.0,
